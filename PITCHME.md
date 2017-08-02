@@ -610,7 +610,7 @@ int main(void){
 入力された数値は＝＞
 ```
 ---
-### 確認問題１　次のプログラムのバグを直しなさい。
+### 確認問題１　バグを直しなさい。
 ```
 #include <stdio.h>
 
@@ -635,4 +635,53 @@ int main(void){
 計算結果＝＞ 15150
 ```
 ---
-### 条件判断
+### 条件判断 (真)
+```
+#include <stdio.h>
+
+int main(void){
+  int data = 1;
+  if (data) printf("結果＝＞%d\n",data);
+  return 0;
+}
+```
+コンソールに出力される結果
+
+```
+結果＝＞
+```
+---
+### 条件判断 (偽)
+```
+#include <stdio.h>
+
+int main(void){
+  int data = 0;
+  if (data) printf("結果＝＞%d\n",data);
+  return 0;
+}
+```
+コンソールに出力される結果
+
+```
+>
+```
+---
+### 条件判断 比較演算子
+```
+#include <stdio.h>
+
+int main(void){
+  int data ;
+  scanf("%d\n",&data);
+  if (data == 1) printf("1を入力しました\n");
+  return 0;
+}
+```
+次の結果を表示する為の条件は？
+
+```
+>
+1を入力しました
+```
+---
