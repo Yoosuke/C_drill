@@ -274,7 +274,7 @@ int main(void){
 int main(void){
 
   printf("10進数：%d,%d,%d\n",1,10,100);
-  printf("8進数：%d,%d,%d\n",01,08,0144);
+  printf("8進数：%d,%d,%d\n",01,12,0144);
   printf("16進数：%d,%d,%d\n",0x1,0x10,0x64);
 
   return 0;
@@ -536,13 +536,13 @@ int main(void){
 int main(void){
   int i5,i3,i1;
   i5 = 12345; i3 = 123; i1 = 1;
-  printf("5桁：%dです。\n", );
-  printf("3桁：%dです。\n", );
-  printf("1桁：%dです。\n\n", );
+  printf("5桁：%dです。\n",i5 );
+  printf("3桁：%dです。\n",i3 );
+  printf("1桁：%dです。\n\n",i1 );
 //桁揃えた場合
-  printf("5桁：%5dです。\n", );
-  printf("3桁：%5dです。\n", );
-  printf("1桁：%5dです。\n", );
+  printf("5桁：%5dです。\n",i5 );
+  printf("3桁：%5dです。\n",i3 );
+  printf("1桁：%5dです。\n",i1 );
 
   return 0;
 }
@@ -741,3 +741,306 @@ int main(void){
   return 0;
 }
 ```
+---
+### elseif
+４７．次のプログラムを完成させなさい。
+```
+#include <stdio.h>
+
+int main(void){
+  int old ;
+  scanf("%d",&old);
+  if (old <= 3) {
+    printf("幼児\n");
+  } else   (old <= 12){
+    printf("子供\n");
+  } else {
+    printf("大人\n");
+  }
+  return 0;
+}
+```
+---
+### switch
+４８．次のプログラムを完成させなさい。
+```
+#include <stdio.h>
+
+int main(void){
+  int input ;
+  printf("1,2,3,4の何れかを入力しなさい。\n");
+  scanf("%d",&input);
+  switch(input){
+    case 1:
+      printf("1が入力されました。\n");
+      break;
+    case 2:
+      printf("2が入力されました。\n");
+      break;
+    case 3:
+      printf("3が入力されました。\n");
+      break;
+    case 4:
+      printf("4が入力されました。\n");
+      break;
+    default:
+      printf("1,2,3,4,以外が入力されました\n");
+      break;
+  }
+  return 0;
+}
+```
+---
+### for　繰り返し
+４９．出力される表示を書きなさい。
+```
+#include <stdio.h>
+
+int main(void){
+  int i ;
+  for (i = 1; i <=3; i++){
+    printf（"1回目\n");
+  }
+  return 0;
+}
+```
+---
+### for カウントアップ
+50．49の問題を以下の結果が表示されるように改良しなさい。
+```
+1回目
+2回目
+3回目
+```
+---
+### for 2次元表現
+51.出力される結果を書きなさい。
+```
+#include <stdio.h>
+
+int main(void){
+  int i x;
+  for (x = 1; x <=3; x++){
+    for (i = 1; i <=3; i++){
+      printf（"%d%d",i,x);
+    }
+    printf("\n");    
+  }
+  return 0;
+}
+```
+---
+### while
+52.出力される結果を書きなさい。
+```
+#include <stdio.h>
+
+int main(void){
+  int i = 0,w = 2;
+
+  while (w < 255){
+    w *= 2;
+    i++;
+  }
+  printf("%d回目にW=%dになります。",i,w);
+}
+```
+---
+### do while
+53.出力される結果を書きなさい。
+```
+#include <stdio.h>
+
+int main(void){
+  int i = 0,w = 2;
+
+  do {
+    w *= 2;
+    i++;
+  } while (w < 2)
+  printf("%d回目にW=%dになります。",i,w);
+}
+```
+---
+### 自作関数
+54.出力される結果を書きなさい。
+```
+#include <stdio.h>
+
+int sum(int);
+
+int main(void){
+  int max;
+  printf("%dまでの合計は%dになります。",max,sum(max));
+}
+
+int sum(int max_value){
+  int i = 0;
+  while(i <= max_value){
+    i = i + 1
+  }
+  return i;
+}
+```
+---
+### 複数の引数を持つ自作関数
+55.出力される結果を書きなさい。
+```
+#include <stdio.h>
+
+int sum(int,int);
+
+int main(void){
+  int min,max;
+  printf("%dから%dまでの合計は%dになります。",min,max,sum(min,max));
+}
+
+int sum(int start,int max_value){
+  int i = start;
+  while(i <= max_value){
+    i = i + 1
+  }
+  return i;
+}
+```
+---
+### ローカル変数
+56.出力される結果を書きなさい。
+```
+#include <stdio.h>
+
+int count(void);
+int main(void){
+
+  count();
+  count();
+  count();
+
+  return 0;
+}
+
+int count(void){
+  int count;
+  count++;
+  printf("%d\n",count);
+  return count;
+}
+```
+---
+### グローバル変数
+57.出力される結果を書きなさい。
+```
+#include <stdio.h>
+int count = 0;
+int count(void);
+
+int main(void){
+
+  count();
+  count();
+  count();
+
+  return 0;
+}
+
+int count(void){
+  count++;
+  printf("%d\n",count);
+  return count;
+}
+```
+---
+### 静的なローカル変数
+58.出力される結果を書きなさい。
+```
+#include <stdio.h>
+int count(void);
+
+int main(void){
+
+  count();
+  count();
+  count();
+
+  return 0;
+}
+
+int count(void){
+  static int count = 0;
+  count++;
+  printf("%d\n",count);
+  return count;
+}
+```
+---
+### 配列
+59.出力される結果を書きなさい。
+```
+#include <stdio.h>
+
+int main(void){
+  int array[4];
+
+  array[0] =  100;
+  array[1] =  10;
+  array[2] = array[0] +  array[1];
+  array[3] = array[2];
+  printf("%d",array[3]++);
+
+  return 0;
+}
+
+```
+---
+### 配列 初期値の代入
+60.出力される結果を書きなさい。
+```
+#include <stdio.h>
+
+int main(void){
+  int array[4] = {1,2} ;
+
+  printf("%d\n",array[0]);
+  printf("%d\n",array[1]);
+  printf("%d\n",array[2]);
+  printf("%d\n",array[3]);
+
+  return 0;
+}
+
+```
+---
+### 配列 初期値の代入
+60.出力される結果を書きなさい。
+```
+#include <stdio.h>
+
+int main(void){
+  int array[4] = {1,2} ;
+
+  printf("%d\n",array[0]);
+  printf("%d\n",array[1]);
+  printf("%d\n",array[2]);
+  printf("%d\n",array[3]);
+
+  return 0;
+}
+
+```
+---
+### 配列　要素数の省略
+61.出力される結果を書きなさい。
+```
+#include <stdio.h>
+
+int main(void){
+  int array[] = {1,2,3,4} ;
+  int i;
+
+  for (i = 0; i <=3; i++){
+  printf("array[%d]=%d\n",i,array[i]);    
+  }
+  return 0;
+}
+```
+---
